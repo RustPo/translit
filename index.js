@@ -6,14 +6,22 @@ function addedNewTranslit() {
 
     // if input has full emply space or extra spaces
 
-    let str = '';
+    let start = 0;
     for (let i = 0; i < input.value.length; i++) {
         if (input.value[i] === ' ') {
-            str += ''
+            start++;
         } else {
-            str += input.value[i];
+            break;
         }
-    } input.value = str;
+    };
+    input.value = input.value.slice(start)
+    for (let i = input.value.length - 1; i > 0; i--) {
+        if (input.value[i] === ' ') {
+            input.value = input.value.slice(0, i);
+        } else {
+            break;
+        };
+    };
 
     // if input is emply, don't add translit!
 
@@ -53,7 +61,7 @@ function addedNewTranslit() {
         };
         newPColumn1.onmouseout = () => {
             long1Translit.style.display = 'none'
-        };;
+        };
     };
     
     // let's add translit in second column dictonary
