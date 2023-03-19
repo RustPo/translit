@@ -1,0 +1,214 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono&display=swa");
+
+:root {
+    --black: #111111;
+    --violet: #4520AB;
+    --white: #F0F0F0;
+    --all-del-button: #ADADAD;
+    --white-longs: #FFFFFF;
+}
+
+main {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 44px;
+    width: 336px;
+    height: 52px;
+    font-size: 40px;
+    font-family: "IBM Plex Mono";
+    letter-spacing: -0.08em;
+    color: var(--violet);
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+    margin-top: 86px;
+    height: 56px;
+    border: 2px solid #111111;
+    width: 500px;
+    border-radius: 14px;
+    justify-content: flex-end;
+}
+
+.input input {
+    height: 24.64px;
+    width: 360px;
+    font-family: 'IBM Plex Mono';
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: -0.05em;
+    opacity: 0.4;
+    color: #111111;
+    outline: none;
+    border: 0;
+    margin-right: 1px;
+}
+
+.button-added button:hover {
+    transform: scale(1.03);
+    transition: 0.2s;
+}
+.button-added button:active {
+    transform: scale(0.98);
+    transition: 0.5s;
+}
+
+.input input[placeholder] {
+    opacity: 1;
+}
+
+.button-added button {
+    font-family: "IBM Plex Mono";
+    color: var(--white);
+    letter-spacing: -0.03em;
+    padding: 0px 12px 5px;
+    border: 0;
+    height: 38.08px;
+    font-size: 18px;
+    background: var(--black);
+    border-radius: 8px;
+    letter-spacing: -0.03em;
+    margin-right: 8px;
+}
+
+.dictionary {
+    display: flex;
+    width: 500px;
+    padding: 0;
+    justify-content: space-between;
+    font-family: "IBM Plex Mono";
+    border-radius: 8px;
+    margin-top: 60px;
+}
+
+.dictionary .column1 {
+    display: flex;
+    width: 250px;
+    background-color: var(--white);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    border-right: 1px solid var(--black);
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.dictionary .column2 {
+    display: flex;
+    width: 250px;
+    background-color: rgba(1, 1, 1, 0.2);
+    font-size: 18px;
+    letter-spacing: -0.03em;
+    border-left: 1px solid var(--black);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+ 
+.column1 li,
+.column2 li {
+    display: flex;
+    height: 40px;
+    align-items: center;
+    position: relative;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    counter-reset: my-counter;
+} 
+
+.column1 li::before {
+    content: counter(my-counter);
+    counter-increment: my-counter;
+    letter-spacing: -0.05em;
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--black);
+    margin-left: 12px;
+}
+
+.column1 p,
+.column2 p {
+    margin-left: 28px;
+}
+
+.new {
+    border-top: 1px solid #111111;
+}
+
+.del {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-right: 11px;
+    margin-left: auto;
+}
+
+.del:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.del:active {
+    transform: scale(0.98);
+    transition: 0.5s;
+}
+
+.clear {
+    display: flex;
+    margin-top: 60px;
+}
+
+.button-delete {
+    height: 38px;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px 8px;
+    gap: 10px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 23px;
+    font-family: "IBM Plex Mono";
+    letter-spacing: -0.05em;
+    background: var(--all-del-button);
+    border-radius: 8px;
+    border: none;
+    color: var(--black);
+}
+
+
+.button-delete:hover {
+    transform: scale(1.03);
+    transition: 0.2s;
+}
+.button-delete:active {
+    transform: scale(0.98);
+    transition: 0.5s;
+}
+
+.long1,
+.long2 {
+    font-size: 16px;
+    letter-spacing: -0.03em;
+    border-radius: 10px;
+    background-color: var(--white-longs);
+    padding: 8px 16px 10px;
+    position: absolute;
+    bottom: 17px;
+    max-width: 133px;
+    display: none;
+    word-wrap: break-word;
+    line-height: 20px;
+}

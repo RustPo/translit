@@ -1,0 +1,49 @@
+@media (max-width: 700px) {
+    body {
+        min-width: 360px;
+    }
+
+    .title {
+        margin-top: 20px;
+        width: 308px;
+        height: 47px;
+        letter-spacing: -0.07em;
+        font-size: 36px;
+    }
+
+    .form {
+        width: 315px;
+        height: 56px;
+        margin-top: 76px;
+    }
+
+    .input input {
+        width: 182px;
+        font-size: 15px;
+    }
+
+    .dictionary {
+        width: 328px;
+        margin-top: 50px;
+    }
+
+    .column1 p,
+    .column2 p {
+        margin-left: 16px;
+    }
+
+    .clear {
+        margin-top: 40px;
+    }
+
+    .del img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .long1,
+    .long2 {
+        max-width: 100px;
+       
+    }
+}
