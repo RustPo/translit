@@ -2,24 +2,22 @@ document.getElementsByTagName('input')[0].focus(); // autofocus for input
 
 
 function addedNewTranslit() {
-    
+    let input = document.getElementsByTagName('input')[0];
+
+    // if input has full emply space or extra spaces
+
+    let str = '';
+    for (let i = 0; i < input.value.length; i++) {
+        if (input.value[i] === ' ') {
+            str += ''
+        } else {
+            str += input.value[i];
+        }
+    } input.value = str;
+
     // if input is emply, don't add translit!
 
-    let input = document.getElementsByTagName('input')[0];
     if (input.value === "") return;
-
-     // if input has full emply space
-
-    flag = false;
-    count = 0;
-    for (let i = 0; i < input.value.length; i++) {
-        if (input.value[i] === ' ') count++;
-        if (count === input.value.length) flag = true;
-    };
-    if (flag === true) {
-        input.value = '';
-        return;
-    };
 
     // if value long
 
