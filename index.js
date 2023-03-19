@@ -1,27 +1,11 @@
 document.getElementsByTagName('input')[0].focus(); // autofocus for input
 
-
 function addedNewTranslit() {
     let input = document.getElementsByTagName('input')[0];
 
     // if input has full emply space or extra spaces
 
-    let start = 0;
-    for (let i = 0; i < input.value.length; i++) {
-        if (input.value[i] === ' ') {
-            start++;
-        } else {
-            break;
-        }
-    };
-    input.value = input.value.slice(start)
-    for (let i = input.value.length - 1; i > 0; i--) {
-        if (input.value[i] === ' ') {
-            input.value = input.value.slice(0, i);
-        } else {
-            break;
-        };
-    };
+    input.value = input.value.trim();
 
     // if input is emply, don't add translit!
 
