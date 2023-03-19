@@ -8,6 +8,19 @@ function addedNewTranslit() {
     let input = document.getElementsByTagName('input')[0];
     if (input.value === "") return;
 
+     // if input has full emply space
+
+    flag = false;
+    count = 0;
+    for (let i = 0; i < input.value.length; i++) {
+        if (input.value[i] === ' ') count++;
+        if (count === input.value.length) flag = true;
+    };
+    if (flag === true) {
+        input.value = '';
+        return;
+    };
+
     // if value long
 
     flag = false;
@@ -75,6 +88,7 @@ function addedNewTranslit() {
         newLiColumn2.appendChild(ButtonColumn2);
         long2Translit.className = 'long2';
         long2Translit.innerText = longInput;
+        flag = false;
         
         newPColumn2.onmouseover = () => {
             long2Translit.style.display = 'unset';
